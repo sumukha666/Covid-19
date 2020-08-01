@@ -12,11 +12,21 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-
+import { PageLayoutComponent } from './components/page-layout/page-layout.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { HttpClientModule } from '@angular/common/http';
+import { TableViewComponent } from './components/table-view/table-view.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderNavComponent,
+    PageLayoutComponent,
+    TableViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +39,13 @@ import {MatListModule} from '@angular/material/list';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    FlexLayoutModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
