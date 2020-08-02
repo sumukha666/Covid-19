@@ -14,59 +14,60 @@ import { CovidApiService } from '../../services/covid-api.service'
     ]),
   ],
 })
-export class TableViewComponent implements OnInit{
+export class TableViewComponent implements OnInit {
   @Input() columnsToDisplay;
-  rows=[];
+  rows = [];
   State = ""
   Confirmed = 0
   Recovered = 0
   Active = 0
   Deceased = 0
-  description=""
+  description = ""
   dataSource
   constructor(private _covidAPI: CovidApiService) { }
-  initilizeData(data){
+  initilizeData(data) {
     console.log("here")
     console.log(data)
     this.dataSource = new MatTableDataSource(data);
   }
-   getStateDetails(){
+  getStateDetails() {
     this._covidAPI.getStates().subscribe(
       (res) => {
         Object.keys(res).forEach(key => {
-          this.State = key
-          Object.keys(res[key]).forEach(district => {
-            if (district === "districtData") {
-              Object.keys(res[key][district]).forEach(city => {
-                this.Active = this.Active + res[key][district][city]["active"];
-                this.Confirmed = this.Confirmed + res[key][district][city]["confirmed"];
-                this.Recovered = this.Recovered + res[key][district][city]["recovered"];
-                this.Deceased = this.Deceased + res[key][district][city]["deceased"]
-              })
-            }
-          })
-          this.rows.push(new Object({ State: this.State, Confirmed: this.Confirmed, Active: this.Active, Recovered: this.Recovered, Deceased: this.Deceased, description:"some" }));
+          if (key !== "State Unassigned") {
+            this.State = key
+            Object.keys(res[key]).forEach(district => {
+              if (district === "districtData") {
+                Object.keys(res[key][district]).forEach(city => {
+                  this.Active = this.Active + res[key][district][city]["active"];
+                  this.Confirmed = this.Confirmed + res[key][district][city]["confirmed"];
+                  this.Recovered = this.Recovered + res[key][district][city]["recovered"];
+                  this.Deceased = this.Deceased + res[key][district][city]["deceased"]
+                })
+              }
+            })
+            this.rows.push(new Object({ State: this.State, Confirmed: this.Confirmed, Active: this.Active, Recovered: this.Recovered, Deceased: this.Deceased, description: "some" }));
+          }
         })
-        delete this.rows["State Unassigned"]
         this.initilizeData(this.rows)
       })
   }
-  ngOnInit(){
+  ngOnInit() {
     this.getStateDetails()
   }
 
-  
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  
+
 }
 
 export interface StateCases {
   State: string;
-  Confirmed:number; 
-  Active:number; 
-  Recovered: number; 
+  Confirmed: number;
+  Active: number;
+  Recovered: number;
   Deceased: number;
 }
