@@ -4,9 +4,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CovidApiService {
-  private _registerUrl = "https://api.covid19india.org/state_district_wise.json"
+  private _registerUrl = "https://api.covid19india.org"; 
   constructor(private http: HttpClient) { }
   getStates() {
-    return this.http.get<any>(this._registerUrl);
+    return this.http.get<any>(this._registerUrl+"/state_district_wise.json");
+  }
+  getCasesByDate(){
+    return this.http.get<any>(this._registerUrl+"/data.json");
   }
 }

@@ -26,8 +26,6 @@ export class TableViewComponent implements OnInit {
   dataSource
   constructor(private _covidAPI: CovidApiService) { }
   initilizeData(data) {
-    console.log("here")
-    console.log(data)
     this.dataSource = new MatTableDataSource(data);
   }
   getStateDetails() {

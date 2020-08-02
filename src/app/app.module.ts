@@ -21,12 +21,16 @@ import { TableViewComponent } from './components/table-view/table-view.component
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HomepageComponent } from './components/homepage/homepage.component';
+import { GraphsComponent } from './components/graphs/graphs.component';
+import { GoogleChartsModule } from 'angular-google-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderNavComponent,
     TableViewComponent,
     HomepageComponent,
+    GraphsComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
+    GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
