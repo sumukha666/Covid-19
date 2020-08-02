@@ -23,6 +23,14 @@
       <span>Covid-app</span>
     </mat-toolbar>
     <!-- Add Content Here -->
-    <app-page-layout></app-page-layout>
+    <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+      <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="33%">
+        <div>Top</div>
+        <app-table-view [columnsToDisplay]="columnsToDisplay"></app-table-view>
+      </div>
+      <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="33%">
+          <div>bottom</div>
+        </div>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

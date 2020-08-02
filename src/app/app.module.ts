@@ -12,7 +12,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import { PageLayoutComponent } from './components/page-layout/page-layout.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -21,12 +20,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { TableViewComponent } from './components/table-view/table-view.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { HomepageComponent } from './components/homepage/homepage.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderNavComponent,
-    PageLayoutComponent,
     TableViewComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
