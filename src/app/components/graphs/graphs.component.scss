@@ -3,10 +3,29 @@
     widows: 100%;
 }
 
-.example-card{
-    padding:1rem
+.margin-1rem{
+    margin:1rem
 }
 
 // .headerBtn{
 //     color: ;
 // }
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  .display-flex{
+      display: flex;
+      justify-content: center;
+  }
+  .padding-sides-1rem{
+      padding-left: 1rem;
+      padding-right: 1rem;
+  }
