@@ -41,7 +41,7 @@ export class TableViewComponent implements OnInit {
             this.rows = new Array([])
             this.delta = { "Confirmed": 0, "Active": 0, "Recovered": 0, "Deceased": 0 }
             for (let i in districtsObj) {
-              console.log(districtsObj[i]["delta"])
+              //console.log(districtsObj[i]["delta"])
               this.delta["Confirmed"] = districtsObj[i]["delta"]["confirmed"] 
               //this.delta["Active"] = parseInt(this.delta["Active"] )+ parseInt(res[key][district][city]["delta"]["active"])
               this.delta["Recovered"] = (districtsObj[i]["delta"]["recovered"]) 
@@ -53,7 +53,7 @@ export class TableViewComponent implements OnInit {
             }
 
             this.rows.shift()
-            console.log(this.rows)
+            //console.log(this.rows)
             this.initilizeData(this.rows)
             break;
           case "State":

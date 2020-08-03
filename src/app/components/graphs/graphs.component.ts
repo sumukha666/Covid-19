@@ -58,12 +58,12 @@ export class GraphsComponent implements OnInit {
     this._covidAPI.getCasesByDate().subscribe(
       (res) => {
         res["cases_time_series"].forEach(element => {
-          //console.log(element)
-          this.confirmData.push([element["date"], +element["totaldeceased"]])
+          this.confirmData.push([element["date"], +element["totalconfirmed"]])
           this.data.push([element["date"], +element["totalconfirmed"]]);
           this.deceasedData.push([element["date"], +element["totaldeceased"]])
           this.recoveredData.push([element["date"], +element["totalrecovered"]])
         })
+        this.initilizeDailyGraphData(this.confirmData)
       }
     )
 
@@ -126,6 +126,9 @@ export class GraphsComponent implements OnInit {
 
     this.data = this.data.slice(this.data.length - 15, this.data.length);
     this.title = this.title + " in last 15 days"
+  }
+  initilizeDailyGraphData(data){
+    this.data=data;
   }
 
   onStateChange(event) {

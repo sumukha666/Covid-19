@@ -16,3 +16,6 @@ export class StatesComponent implements OnInit {
   }
 
 }
+/*
+min midth=90;
+@media querry*/

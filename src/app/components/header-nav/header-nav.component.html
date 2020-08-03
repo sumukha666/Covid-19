@@ -29,8 +29,12 @@
         <app-table-view [columnsToDisplay]="columnsToDisplay" [stateNameToDisplay]="stateNameToDisplay"></app-table-view>
       </div>
       <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="33%">
-          <div>bottom</div>
+          <div *ngIf="showStateGraph else indaGraphs">
+            <app-state-graph></app-state-graph>
+          </div>
+          <ng-template #indaGraphs>  
           <app-graphs></app-graphs>
+        </ng-template>
         </div>
     </div>
   </mat-sidenav-content>
