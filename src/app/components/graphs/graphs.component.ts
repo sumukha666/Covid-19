@@ -35,8 +35,8 @@ export class GraphsComponent implements OnInit {
       trigger: 'selection'
     }
   };
-  width = 550;
-  height = 400;
+  width = 400;
+  height = 300;
 
   stateTitle = "COVID-19 information in"
   stateType = 'BarChart';
@@ -125,7 +125,7 @@ export class GraphsComponent implements OnInit {
   last15Days(event) {
 
     this.data = this.data.slice(this.data.length - 15, this.data.length);
-    this.title = this.title + " in last 15 days"
+    this.title = this.title.includes(" in last 15 days")? this.title : this.title+ " in last 15 days"
   }
   initilizeDailyGraphData(data){
     this.data=data;

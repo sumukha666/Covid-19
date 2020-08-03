@@ -1,6 +1,7 @@
 .graphId{
-    overflow:auto;
+    overflow:scroll;
     widows: 100%;
+    padding-top: 2.5rem;
 }
 
 .margin-1rem{
@@ -23,13 +24,29 @@
 
   .display-flex{
       display: flex;
-      justify-content: center;
+      //justify-content: center;
   }
   .padding-sides-1rem{
       padding-left: 1rem;
       padding-right: 1rem;
   }
 
-  .graph{
-    overflow: scroll
+  // .graph{
+  //   // overflow: scroll;
+    
+  // }
+.actionBtn{
+  position: absolute;
+  right: 20px;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [graph]{
+    width: 100%;
   }
+}
+.btn{
+    //width: 100%;
+    //height: 2em;
+    text-align: left;
+}
