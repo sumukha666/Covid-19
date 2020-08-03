@@ -25,6 +25,8 @@ import { GraphsComponent } from './components/graphs/graphs.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { StatesComponent } from './components/states/states.component';
+import { DistrictComponent } from './components/district/district.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     TableViewComponent,
     HomepageComponent,
     GraphsComponent,
+    StatesComponent,
+    DistrictComponent,
   ],
   imports: [
     BrowserModule,

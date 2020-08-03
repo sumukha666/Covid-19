@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { MatTableDataSource } from '@angular/material/table';
 import { CovidApiService } from '../../services/covid-api.service'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-table-view',
   templateUrl: './table-view.component.html',
@@ -24,7 +25,8 @@ export class TableViewComponent implements OnInit {
   Deceased = 0
   description = ""
   dataSource
-  constructor(private _covidAPI: CovidApiService) { }
+  expandedElement: StateCases | null;
+  constructor(private _covidAPI: CovidApiService, private _router: Router) { }
   initilizeData(data) {
     this.dataSource = new MatTableDataSource(data);
   }
@@ -58,6 +60,12 @@ export class TableViewComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  openStateDetails(event,row){
+    //console.log(row)
+    //let urlLink = "states/"+ row.State;
+    //event.push("/homepage")
+    this._router.navigate(['/states/'+row.State])
   }
 
 }
