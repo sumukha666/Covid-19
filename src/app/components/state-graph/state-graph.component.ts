@@ -52,6 +52,7 @@ export class StateGraphComponent implements OnInit {
           ["Deceased", districtsObj[this.stateoptions[0]].deceased]
         ]
         this.districtTitle = "COVID-19 information in " + this.stateoptions[0];
+        console.log(this.stateoptions[0])
         });
 
       this.filteredOptions = this.myControl.valueChanges
@@ -67,15 +68,14 @@ export class StateGraphComponent implements OnInit {
     return this.stateoptions.filter(option => option.toLowerCase().includes(filterValue));
   }
 
-  onStateChange(event) {
-    // console.log(event.source["_element"]["nativeElement"]["outerText"])
-    // console.log(this.districtObject)
+  onStateChange(event){
+    //console.log(event.option.value)
     this.districtData = [
-      ["Active", this.districtObject[event.source["_element"]["nativeElement"]["outerText"]].active],
-      ["Confirmed", this.districtObject[event.source["_element"]["nativeElement"]["outerText"]].confirmed],
-      ["Recovered", this.districtObject[event.source["_element"]["nativeElement"]["outerText"]].recovered],
-      ["Deceased", this.districtObject[event.source["_element"]["nativeElement"]["outerText"]].deceased]
-    ]
-    this.districtTitle = "COVID-19 information in " + event.source["_element"]["nativeElement"]["outerText"] + " District"
+          ["Active", this.districtObject[event.option.value].active],
+          ["Confirmed", this.districtObject[event.option.value].confirmed],
+          ["Recovered", this.districtObject[event.option.value].recovered],
+          ["Deceased", this.districtObject[event.option.value].deceased]
+        ]
+        this.districtTitle = "COVID-19 information in " + event.option.value + " District"
   }
 }

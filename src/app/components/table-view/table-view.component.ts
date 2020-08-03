@@ -18,8 +18,9 @@ import { Router } from '@angular/router';
 export class TableViewComponent implements OnInit {
   @Input() columnsToDisplay;
   @Input() stateNameToDisplay;
+  @Input() disableRowClick;
   rows = [];
-  delta = { "Confirmed": 0, "Active": 0, "Recovered": 0, "Deceased": 0 }
+  delta = { "Confirmed": 0, "Recovered": 0, "Deceased": 0 }
   State = ""
   Confirmed = 0
   Recovered = 0
@@ -39,7 +40,7 @@ export class TableViewComponent implements OnInit {
           case "District":
             let districtsObj = res[this.stateNameToDisplay]["districtData"]
             this.rows = new Array([])
-            this.delta = { "Confirmed": 0, "Active": 0, "Recovered": 0, "Deceased": 0 }
+            this.delta = { "Confirmed": 0, "Recovered": 0, "Deceased": 0 }
             for (let i in districtsObj) {
               //console.log(districtsObj[i]["delta"])
               this.delta["Confirmed"] = districtsObj[i]["delta"]["confirmed"] 
@@ -64,7 +65,7 @@ export class TableViewComponent implements OnInit {
                 this.Confirmed = 0
                 this.Recovered = 0
                 this.Deceased = 0
-                this.delta = { "Confirmed": 0, "Active": 0, "Recovered": 0, "Deceased": 0 }
+                this.delta = { "Confirmed": 0, "Recovered": 0, "Deceased": 0 }
                 Object.keys(res[key]).forEach(district => {
 
                   if (district === "districtData") {
