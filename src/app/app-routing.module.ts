@@ -17,6 +17,10 @@ const routes: Routes = [
     path: "district/:dname",
     component: DistrictComponent
   },
+  {
+    path: "**",
+    component: HomepageComponent
+  },
 ];
 
 @NgModule({
