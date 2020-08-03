@@ -7,7 +7,7 @@
 <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
   <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
     <th mat-header-cell *matHeaderCellDef> {{column}} </th>
-    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+    <td mat-cell *matCellDef="let element"> {{element[column]}} <span class="deltaValue">{{element["delta"][column]>=0?("+"+element["delta"][column]):"" }}</span></td>
   </ng-container>
 
   <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->

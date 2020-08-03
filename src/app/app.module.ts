@@ -27,6 +27,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { StatesComponent } from './components/states/states.component';
 import { DistrictComponent } from './components/district/district.component';
+import { StateGraphComponent } from './components/state-graph/state-graph.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { DistrictComponent } from './components/district/district.component';
     GraphsComponent,
     StatesComponent,
     DistrictComponent,
+    StateGraphComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,8 +12,10 @@
         <button mat-button>Confirmed</button></mat-card-actions>
     </div> -->
   </mat-card-header>
-  <google-chart [title]="title" [type]="type" [data]="data" [options]="options" [width]="width" [height]="height">
+  <div class="graph">
+  <google-chart [title]="title" [type]="type" [data]="data" [options]="options" [width]="width" [height]="height" >
   </google-chart>
+</div>
   <!-- <mat-card-content>
       <p>
         The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
