@@ -10,6 +10,7 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class HeaderNavComponent implements OnInit{
   @Input() columnsToDisplay;
+  @Input() stateNameToDisplay;
   ngOnInit(){
     
   }

@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 })
 export class TableViewComponent implements OnInit {
   @Input() columnsToDisplay;
+  @Input() stateNameToDisplay;
   rows = [];
   State = ""
   Confirmed = 0
@@ -33,26 +34,43 @@ export class TableViewComponent implements OnInit {
   getStateDetails() {
     this._covidAPI.getStates().subscribe(
       (res) => {
-        Object.keys(res).forEach(key => {
-          if (key !== "State Unassigned") {
-            this.State = key
-            Object.keys(res[key]).forEach(district => {
-              if (district === "districtData") {
-                Object.keys(res[key][district]).forEach(city => {
-                  this.Active = this.Active + res[key][district][city]["active"];
-                  this.Confirmed = this.Confirmed + res[key][district][city]["confirmed"];
-                  this.Recovered = this.Recovered + res[key][district][city]["recovered"];
-                  this.Deceased = this.Deceased + res[key][district][city]["deceased"]
+        switch(this.columnsToDisplay[0]){
+          case "District":
+            let districtsObj= res[this.stateNameToDisplay]["districtData"]
+            this.rows= new Array([])
+            for (let i in districtsObj){
+              console.log(i)
+              this.rows.push({District:i,Confirmed: districtsObj[i]['confirmed'], Active: districtsObj[i]['active'], Recovered: districtsObj[i]['recovered'], Deceased: districtsObj[i]['deceased'], description: "some" })
+            }
+            
+            this.rows.shift()
+            console.log(this.rows)
+            this.initilizeData(this.rows)
+            break;
+          case "State":
+            Object.keys(res).forEach(key => {
+              if (key !== "State Unassigned") {
+                this.State = key
+                Object.keys(res[key]).forEach(district => {
+                  if (district === "districtData") {
+                    Object.keys(res[key][district]).forEach(city => {
+                      this.Active = this.Active + res[key][district][city]["active"];
+                      this.Confirmed = this.Confirmed + res[key][district][city]["confirmed"];
+                      this.Recovered = this.Recovered + res[key][district][city]["recovered"];
+                      this.Deceased = this.Deceased + res[key][district][city]["deceased"]
+                    })
+                  }
                 })
+                this.rows.push(new Object({ State: this.State, Confirmed: this.Confirmed, Active: this.Active, Recovered: this.Recovered, Deceased: this.Deceased, description: "some" }));
               }
             })
-            this.rows.push(new Object({ State: this.State, Confirmed: this.Confirmed, Active: this.Active, Recovered: this.Recovered, Deceased: this.Deceased, description: "some" }));
-          }
-        })
-        this.initilizeData(this.rows)
+            this.initilizeData(this.rows)
+
+      }
       })
   }
   ngOnInit() {
+    this.rows.splice(0,this.rows.length)
     this.getStateDetails()
   }
 

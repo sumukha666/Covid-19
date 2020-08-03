@@ -58,7 +58,7 @@ export class GraphsComponent implements OnInit {
     this._covidAPI.getCasesByDate().subscribe(
       (res) => {
         res["cases_time_series"].forEach(element => {
-          console.log(element)
+          //console.log(element)
           this.confirmData.push([element["date"], +element["totaldeceased"]])
           this.data.push([element["date"], +element["totalconfirmed"]]);
           this.deceasedData.push([element["date"], +element["totaldeceased"]])
@@ -92,7 +92,7 @@ export class GraphsComponent implements OnInit {
           ["Recovered", this.stateObject["Karnataka"].recovered],
           ["Deceased", this.stateObject["Karnataka"].deceased]
         ]
-        console.log(this.stateObject)
+        //console.log(this.stateObject)
         this.stateoptions = Object.keys(this.stateObject)
       }
     )

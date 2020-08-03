@@ -8,10 +8,11 @@ import { ActivatedRoute } from '@angular/router'
 export class StatesComponent implements OnInit {
 
   constructor(private router: ActivatedRoute) { }
-  gotoRoute
+  stateName
+  columnsToDisplay = ["District", "Confirmed", "Active", "Recovered", "Deceased"];
   ngOnInit(): void {
     console.log(this.router.snapshot.params)
-    this.gotoRoute = this.router.snapshot.params.name
+    this.stateName = this.router.snapshot.params.name
   }
 
 }
