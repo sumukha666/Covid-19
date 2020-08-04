@@ -43,10 +43,10 @@ export class TableViewComponent implements OnInit {
             this.delta = { "Confirmed": 0, "Recovered": 0, "Deceased": 0 }
             for (let i in districtsObj) {
               //console.log(districtsObj[i]["delta"])
-              this.delta["Confirmed"] = districtsObj[i]["delta"]["confirmed"] 
+              this.delta["Confirmed"] = districtsObj[i]["delta"]["confirmed"]
               //this.delta["Active"] = parseInt(this.delta["Active"] )+ parseInt(res[key][district][city]["delta"]["active"])
-              this.delta["Recovered"] = (districtsObj[i]["delta"]["recovered"]) 
-              this.delta["Deceased"] = (districtsObj[i]["delta"]["recovered"]) 
+              this.delta["Recovered"] = (districtsObj[i]["delta"]["recovered"])
+              this.delta["Deceased"] = (districtsObj[i]["delta"]["recovered"])
               this.rows.push({
                 District: i, Confirmed: districtsObj[i]['confirmed'], Active: districtsObj[i]['active'], Recovered: districtsObj[i]['recovered'],
                 Deceased: districtsObj[i]['deceased'], description: "some", "delta": this.delta
@@ -87,8 +87,8 @@ export class TableViewComponent implements OnInit {
                 //console.log(this.State, this.delta)
 
                 this.rows.push(new Object({
-                  State: this.State, Confirmed: this.Confirmed, Active: this.Active,
-                  Recovered: this.Recovered, Deceased: this.Deceased, description: "some",
+                  State: this.State, Confirmed: (this.Confirmed), Active: (this.Active),
+                  Recovered: (this.Recovered), Deceased: (this.Deceased), description: "some",
                   delta: { Confirmed: this.delta["Confirmed"], Recovered: this.delta["Recovered"], Deceased: this.delta["Deceased"] }
                 }));
                 //console.log(this.rows)
@@ -118,7 +118,15 @@ export class TableViewComponent implements OnInit {
     //event.push("/homepage")
     this._router.navigate(['/states/' + row.State])
   }
-
+  convertNumberIntoK(value) {
+    if (value >= 1000000) {
+      value = Math.round(value / 1000000) + "M"
+    }
+    else if (value >= 1000) {
+      value = Math.round(value / 1000) + "K";
+    }
+    return value;
+  }
 }
 
 export interface StateCases {

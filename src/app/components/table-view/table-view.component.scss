@@ -52,6 +52,7 @@ table {
 
 .deltaValue{
   color: red;
+  display: flex;
 }
 
 // .tableBtn{
@@ -59,4 +60,12 @@ table {
 // }
 .marginRight{
   margin-left: auto;
+}
+.columHeader{
+  text-align: center;
+  padding-left: 5px
+}
+.iconId{
+  //font-size: 30px;
+  transform: scale(0.70);
 }

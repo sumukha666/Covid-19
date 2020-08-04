@@ -28,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { StatesComponent } from './components/states/states.component';
 import { DistrictComponent } from './components/district/district.component';
 import { StateGraphComponent } from './components/state-graph/state-graph.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +62,7 @@ import { StateGraphComponent } from './components/state-graph/state-graph.compon
     MatAutocompleteModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
