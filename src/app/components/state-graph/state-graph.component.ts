@@ -15,8 +15,8 @@ export class StateGraphComponent implements OnInit {
   chart = []
   constructor(private _covidAPI: CovidApiService, private router: ActivatedRoute) { }
 
-  width = 550;
-  height = 400;
+  width = 350;
+  height = 200;
 
   districtTitle = "COVID-19 information in"
   districtType = 'BarChart';

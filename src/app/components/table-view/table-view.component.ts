@@ -55,7 +55,8 @@ export class TableViewComponent implements OnInit {
 
             this.rows.shift()
             //console.log(this.rows)
-            this.initilizeData(this.rows)
+            this.rows.sort((a,b)=>a.Confiirmed-b.Confirmed);
+            this.initilizeData(this.rows.reverse())
             break;
           case "State":
             Object.keys(res).forEach(key => {
@@ -96,7 +97,8 @@ export class TableViewComponent implements OnInit {
               }
             })
             //console.log(this.rows)
-            this.initilizeData(this.rows)
+            this.rows.sort((a,b)=>a.Confirmed-b.Confirmed);
+            this.initilizeData(this.rows.reverse())
             break;
 
         }
@@ -126,6 +128,20 @@ export class TableViewComponent implements OnInit {
       value = Math.round(value / 1000) + "K";
     }
     return value;
+  }
+
+  onSortByName(){
+    if(this.rows[0]['State']){
+      this.rows= this.rows.sort((a,b)=>(a.State<b.State ? -1 : (a.State > b.State)?1 : 0))
+    } else {
+      this.rows= this.rows.sort((a,b)=>(a.District<b.District ? -1 : (a.District > b.District)?1 : 0))
+    }
+    this.initilizeData(this.rows);
+  }
+
+  onSortByCases(){
+    this.rows.sort((a,b)=> a.Confirmed-b.Confirmed);
+    this.initilizeData(this.rows.reverse())
   }
 }
 

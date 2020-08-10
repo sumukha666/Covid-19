@@ -35,8 +35,8 @@ export class GraphsComponent implements OnInit {
       trigger: 'selection'
     }
   };
-  width = 550;
-  height = 400;
+  width = 350;
+  height = 200;
 
   stateTitle = "COVID-19 information in"
   stateType = 'BarChart';

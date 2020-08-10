@@ -24,10 +24,10 @@
     </mat-toolbar>
     <!-- Add Content Here -->
     <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
-      <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="33%">
+      <div fxFlex="65%" fxFlex.xs="100%" fxFlex.sm="100%">
         <app-table-view [columnsToDisplay]="columnsToDisplay" [stateNameToDisplay]="stateNameToDisplay" [disableRowClick]="showStateGraph"></app-table-view>
       </div>
-      <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="33%">
+      <div fxFlex="35%" fxFlex.xs="100%" fxFlex.sm="100%">
           <div *ngIf="showStateGraph else indaGraphs">
             <app-state-graph></app-state-graph>
           </div>
