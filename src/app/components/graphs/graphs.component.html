@@ -85,11 +85,11 @@
 </div> -->
 
 <mat-card class="example-card margin-1rem">
-  <div *ngIf="isStateGraphError; else dispGraph">
+  <div *ngIf="isStateGraphError; else dispStateGraph">
     <mat-card-title>Covid-19 Cases in India</mat-card-title>
     <p class="dispError">Something went wrong, please try again later</p>
   </div>
-  <ng-template #dispGraph>
+  <ng-template #dispStateGraph>
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>Covid-19 Cases in India</mat-card-title>
