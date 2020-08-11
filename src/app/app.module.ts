@@ -29,6 +29,7 @@ import { StatesComponent } from './components/states/states.component';
 import { DistrictComponent } from './components/district/district.component';
 import { StateGraphComponent } from './components/state-graph/state-graph.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { AboutCovidComponent } from './components/about-covid/about-covid.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     StatesComponent,
     DistrictComponent,
     StateGraphComponent,
+    AboutCovidComponent,
   ],
   imports: [
     BrowserModule,
