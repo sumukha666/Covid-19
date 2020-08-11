@@ -1,27 +1,53 @@
 <mat-card class="example-card margin-1rem">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Covid-19 Cases in {{stateName}}</mat-card-title>
-    <mat-card-subtitle>
-      <mat-card-actions>
-        <form class="example-form">
-          <mat-form-field class="example-full-width padding-sides-1rem">
-            <input type="text" placeholder="Select District" aria-label="Number" matInput [formControl]="myControl"
-              [matAutocomplete]="auto">
-            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onStateChange($event)">
-              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                {{option}}
-              </mat-option>
-            </mat-autocomplete>
-          </mat-form-field>
-        </form>
-      </mat-card-actions>
-    </mat-card-subtitle>
-
-  </mat-card-header>
-  <div class="graphId">
-    <google-chart [title]="districtTitle" [type]="districtType" [data]="districtData" [options]="stateoptions"
-      [width]="width" [height]="height">
-    </google-chart>
+  <div *ngIf="isGraphError; else dispGraph">
+    <mat-card-title>Covid-19 Cases in India</mat-card-title>
+    <p class="dispError">Something went wrong, please try again later</p>
   </div>
+  <ng-template #dispGraph>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Covid-19 Cases in {{ stateName }}</mat-card-title>
+      <mat-card-subtitle>
+        <mat-card-actions>
+          <form class="example-form">
+            <mat-form-field class="example-full-width padding-sides-1rem">
+              <input
+                type="text"
+                placeholder="Select District"
+                aria-label="Number"
+                matInput
+                [formControl]="myControl"
+                [matAutocomplete]="auto"
+              />
+              <mat-autocomplete
+                #auto="matAutocomplete"
+                (optionSelected)="onStateChange($event)"
+              >
+                <mat-option
+                  *ngFor="let option of filteredOptions | async"
+                  [value]="option"
+                >
+                  {{ option }}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+        </mat-card-actions>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <div *ngIf="districtData.length === 0; else showGraph" class="textCenter">
+      <mat-spinner></mat-spinner>
+    </div>
+    <ng-template class="graphId" #showGraph>
+      <google-chart
+        [title]="districtTitle"
+        [type]="districtType"
+        [data]="districtData"
+        [options]="stateoptions"
+        [width]="width"
+        [height]="height"
+      >
+      </google-chart>
+    </ng-template>
+  </ng-template>
 </mat-card>

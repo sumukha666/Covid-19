@@ -1,17 +1,16 @@
-.graphId1{
-    overflow:scroll;
-    widows: 100%;
-    padding-top: 3rem;
+.graphId1 {
+  overflow: scroll;
+  widows: 100%;
+  padding-top: 3rem;
 }
-.graphId2{
-  overflow:scroll;
+.graphId2 {
+  overflow: scroll;
   widows: 100%;
   //padding-top: 1rem;
 }
 
-
-.margin-1rem{
-    margin:1rem
+.margin-1rem {
+  margin: 1rem;
 }
 
 // .headerBtn{
@@ -19,41 +18,56 @@
 // }
 
 .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
 
-  .display-flex{
-      display: flex;
-      //justify-content: center;
-  }
-  .padding-sides-1rem{
-      padding-left: 1rem;
-      padding-right: 1rem;
-  }
+.example-full-width {
+  width: 100%;
+}
 
-  // .graph{
-  //   // overflow: scroll;
-    
-  // }
-.actionBtn{
+.display-flex {
+  display: flex;
+  //justify-content: center;
+}
+.padding-sides-1rem {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+// .graph{
+//   // overflow: scroll;
+
+// }
+.actionBtn {
   position: absolute;
   right: 20px;
 }
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
-  [graph]{
+  [graph] {
     width: 100%;
   }
 }
-.btn{
-    //width: 100%;
-    height: 2rem;
-    text-align: left;
+.btn {
+  //width: 100%;
+  height: 2rem;
+  text-align: left;
+}
 
+.textCenter {
+  //text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  size: 5rem;
+}
+
+mat-spinner {
+  zoom: 0.5;
+}
+.dispError {
+  color: red;
+  font-size: 12px;
 }

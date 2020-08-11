@@ -1,5 +1,21 @@
-.graphId{
-    overflow:scroll;
-    widows: 100%;
-    //padding-top: 1rem;
+.graphId {
+  overflow: scroll;
+  widows: 100%;
+  //padding-top: 1rem;
+}
+
+.textCenter {
+  //text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  size: 5rem;
+}
+
+mat-spinner {
+  zoom: 0.5;
+}
+.dispError {
+  color: red;
+  font-size: 12px;
 }
