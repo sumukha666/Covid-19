@@ -19,3 +19,24 @@
   .content {
     padding: 1rem;
   }
+  .cardImage{
+    height: 200px;
+    padding: 2rem;
+    width: 90%;
+  }
+
+  .margin-top {
+    margin-top: 5px;
+  }
+
+  .cardFlex{
+    align-items: stretch;
+
+  }
+  mat-card{
+    min-height: 530px;
+  }
+
+  ul {
+    font-size: 15px;
+  }
