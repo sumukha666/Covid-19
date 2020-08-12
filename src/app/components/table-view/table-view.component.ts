@@ -3,6 +3,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { MatTableDataSource } from '@angular/material/table';
 import { CovidApiService } from '../../services/covid-api.service'
 import { Router } from '@angular/router';
+import {Sort} from '@angular/material/sort';
 @Component({
   selector: 'app-table-view',
   templateUrl: './table-view.component.html',
@@ -85,18 +86,13 @@ export class TableViewComponent implements OnInit {
                     })
                   }
                 })
-                //console.log(this.State, this.delta)
-
                 this.rows.push(new Object({
                   State: this.State, Confirmed: (this.Confirmed), Active: (this.Active),
                   Recovered: (this.Recovered), Deceased: (this.Deceased), description: "some",
                   delta: { Confirmed: this.delta["Confirmed"], Recovered: this.delta["Recovered"], Deceased: this.delta["Deceased"] }
                 }));
-                //console.log(this.rows)
-
               }
             })
-            //console.log(this.rows)
             this.rows.sort((a,b)=>a.Confirmed-b.Confirmed);
             this.initilizeData(this.rows.reverse())
             break;
@@ -115,9 +111,6 @@ export class TableViewComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   openStateDetails(event, row) {
-    //console.log(row)
-    //let urlLink = "states/"+ row.State;
-    //event.push("/homepage")
     this._router.navigate(['/states/' + row.State])
   }
   convertNumberIntoK(value) {
@@ -130,19 +123,32 @@ export class TableViewComponent implements OnInit {
     return value;
   }
 
-  onSortByName(){
-    if(this.rows[0]['State']){
-      this.rows= this.rows.sort((a,b)=>(a.State<b.State ? -1 : (a.State > b.State)?1 : 0))
-    } else {
-      this.rows= this.rows.sort((a,b)=>(a.District<b.District ? -1 : (a.District > b.District)?1 : 0))
+  sortData(sort: Sort) {
+    const data = this.rows.slice();
+    if (!sort.active || sort.direction === '') {
+      this.initilizeData(this.rows);
+      return;
     }
-    this.initilizeData(this.rows);
+
+    this.rows = data.sort((a, b) => {
+      const isAsc = sort.direction === 'asc';
+      switch (sort.active) {
+        case 'State': return compare(a.State, b.State, isAsc);
+        case 'District': return compare(a.District, b.District, isAsc);
+        case 'Confirmed': return compare(a.Confirmed, b.Confirmed, isAsc);
+        case 'Active': return compare(a.Active, b.Active, isAsc);
+        case 'Recovered': return compare(a.Recovered, b.Recovered, isAsc);
+        case 'Deceased': return compare(a.Deceased, b.Deceased, isAsc);
+        default: return 0;
+      }
+    });
+    this.initilizeData(this.rows)
   }
 
-  onSortByCases(){
-    this.rows.sort((a,b)=> a.Confirmed-b.Confirmed);
-    this.initilizeData(this.rows.reverse())
-  }
+}
+
+function compare(a: number | string, b: number | string, isAsc: boolean) {
+  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
 
 export interface StateCases {
