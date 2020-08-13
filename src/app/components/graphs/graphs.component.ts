@@ -153,33 +153,13 @@ export class GraphsComponent implements OnInit {
   }
 
   onStateChange(event) {
-    console.log(event.source["_element"]["nativeElement"]["outerText"]);
-
     this.stateData = [
-      [
-        "Active",
-        this.stateObject[event.source["_element"]["nativeElement"]["outerText"]]
-          .active,
-      ],
-      [
-        "Confirmed",
-        this.stateObject[event.source["_element"]["nativeElement"]["outerText"]]
-          .confirmed,
-      ],
-      [
-        "Recovered",
-        this.stateObject[event.source["_element"]["nativeElement"]["outerText"]]
-          .recovered,
-      ],
-      [
-        "Deceased",
-        this.stateObject[event.source["_element"]["nativeElement"]["outerText"]]
-          .deceased,
-      ],
+      ["Active", this.stateObject[event.option.value].active],
+      ["Confirmed", this.stateObject[event.option.value].confirmed],
+      ["Recovered", this.stateObject[event.option.value].recovered],
+      ["Deceased", this.stateObject[event.option.value].deceased],
     ];
     this.stateTitle =
-      "COVID-19 information in " +
-      event.source["_element"]["nativeElement"]["outerText"] +
-      " State";
+      "COVID-19 information in " + event.option.value + " State";
   }
 }

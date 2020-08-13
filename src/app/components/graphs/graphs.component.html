@@ -32,16 +32,18 @@
       <mat-spinner></mat-spinner>
     </div>
 
-    <ng-template #showGraph class="graphId1">
-      <google-chart
-        [title]="title"
-        [type]="type"
-        [data]="data"
-        [options]="options"
-        [width]="width"
-        [height]="height"
-      >
-      </google-chart>
+    <ng-template #showGraph>
+      <div class="graphId1">
+        <google-chart
+          [title]="title"
+          [type]="type"
+          [data]="data"
+          [options]="options"
+          [width]="width"
+          [height]="height"
+        >
+        </google-chart>
+      </div>
     </ng-template>
     <!-- <mat-card-content>
         <p>
@@ -105,11 +107,13 @@
                 [formControl]="myControl"
                 [matAutocomplete]="auto"
               />
-              <mat-autocomplete #auto="matAutocomplete">
+              <mat-autocomplete
+                #auto="matAutocomplete"
+                (optionSelected)="onStateChange($event)"
+              >
                 <mat-option
                   *ngFor="let option of filteredOptions | async"
                   [value]="option"
-                  (onSelectionChange)="onStateChange($event)"
                 >
                   {{ option }}
                 </mat-option>
@@ -122,16 +126,18 @@
     <div *ngIf="stateData.length === 0; else showStateGraph" class="textCenter">
       <mat-spinner></mat-spinner>
     </div>
-    <ng-template class="graphId2" #showStateGraph>
-      <google-chart
-        [title]="stateTitle"
-        [type]="stateType"
-        [data]="stateData"
-        [options]="stateoptions"
-        [width]="width"
-        [height]="height"
-      >
-      </google-chart>
+    <ng-template #showStateGraph>
+      <div class="graphId2">
+        <google-chart
+          [title]="stateTitle"
+          [type]="stateType"
+          [data]="stateData"
+          [options]="stateoptions"
+          [width]="width"
+          [height]="height"
+        >
+        </google-chart>
+      </div>
     </ng-template>
   </ng-template>
 </mat-card>
