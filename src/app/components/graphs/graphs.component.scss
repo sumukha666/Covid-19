@@ -9,9 +9,9 @@
   //padding-top: 1rem;
 }
 
-.margin-1rem {
-  margin: 1rem;
-}
+// .margin-1rem {
+//   margin: 1rem;
+// }
 
 // .headerBtn{
 //     color: ;
@@ -46,9 +46,10 @@
 }
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
-  [graph] {
-    width: 100%;
-  }
+  .margin-top-10px {
+      margin-top: 10px;
+    }
+  
 }
 .btn {
   //width: 100%;
@@ -65,7 +66,7 @@
 }
 
 mat-spinner {
-  zoom: 0.5;
+  zoom: 0.3;
 }
 .dispError {
   color: red;

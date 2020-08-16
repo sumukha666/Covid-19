@@ -26,7 +26,6 @@ import { GoogleChartsModule } from "angular-google-charts";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { StatesComponent } from "./components/states/states.component";
-import { DistrictComponent } from "./components/district/district.component";
 import { StateGraphComponent } from "./components/state-graph/state-graph.component";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { AboutCovidComponent } from "./components/about-covid/about-covid.component";
@@ -39,7 +38,6 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
     HomepageComponent,
     GraphsComponent,
     StatesComponent,
-    DistrictComponent,
     StateGraphComponent,
     AboutCovidComponent,
   ],

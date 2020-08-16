@@ -2,10 +2,9 @@
   <mat-sidenav
     #drawer
     class="sidenav"
-    fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
+    position="end"
+    [fixedInViewport]="false"
+    [mode]="'over'"
   >
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
@@ -15,17 +14,17 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary"  class="display-flex">
+      <span>Covid-app</span>
       <button
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
+        class="menuBtn"
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Covid-app</span>
     </mat-toolbar>
     <!-- Add Content Here -->
     <!-- <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
@@ -41,193 +40,250 @@
       fxLayout="row wrap"
       fxLayout.lt-sm="column"
       fxLayoutGap="32px"
-      fxLayoutAlign="stretch" 
+      fxLayoutAlign="stretch"
     >
-        <!-- card 1 -->
-        <mat-card
-          class="example-card margin-top"
-          fxFlex="0 1 calc(33.3% - 32px)"
-          fxFlex.lt-md="0 1 calc(50% - 32px)"
-          fxFlex.lt-sm="100%"
-          [style.height]="'100%'"
-        >
-          <mat-card-header>
-            <mat-card-title>What to know about coronaviruses</mat-card-title>
-          </mat-card-header>
-          <img mat-card-image src="assets/images/coronavirus.jpg" alt="Photo of a person holding coronavirus tag" class="cardImage">
-          <mat-card-content>
-            <p>
-              Coronaviruses typically affect the respiratory tracts of birds and mammals, including humans. Doctors associate them with the common cold, bronchitis, pneumonia, severe acute respiratory syndrome (SARS), and coronavirus disease 2019 (COVID-19). These viruses can also affect the gut.
-            </p>
-            <p>
-              Coronaviruses usually cause the common cold, though they can be responsible for more severe illnesses.
-              Over the past 80 years, scientists have found that these viruses can infect mice, rats, dogs, cats, turkeys, horses, pigs, and cattle. Sometimes, these animals transmit the viruses to humans.
-            </p>
-          </mat-card-content>
-        </mat-card>
+      <!-- card 1 -->
+      <mat-card
+        class="example-card margin-top"
+        fxFlex="0 1 calc(33.3% - 32px)"
+        fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="100%"
+        [style.height]="'100%'"
+      >
+        <mat-card-header>
+          <mat-card-title>What to know about coronaviruses</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="assets/images/coronavirus.jpg"
+          alt="Photo of a person holding coronavirus tag"
+          class="cardImage"
+        />
+        <mat-card-content>
+          <p>
+            Coronaviruses typically affect the respiratory tracts of birds and
+            mammals, including humans. Doctors associate them with the common
+            cold, bronchitis, pneumonia, severe acute respiratory syndrome
+            (SARS), and coronavirus disease 2019 (COVID-19). These viruses can
+            also affect the gut.
+          </p>
+          <p>
+            Coronaviruses usually cause the common cold, though they can be
+            responsible for more severe illnesses. Over the past 80 years,
+            scientists have found that these viruses can infect mice, rats,
+            dogs, cats, turkeys, horses, pigs, and cattle. Sometimes, these
+            animals transmit the viruses to humans.
+          </p>
+        </mat-card-content>
+      </mat-card>
 
-        <!-- card 2 -->
-        <mat-card
-          class="example-card margin-top"
-          fxFlex="0 1 calc(33.3% - 32px)"
-          fxFlex.lt-md="0 1 calc(50% - 32px)"
-          fxFlex.lt-sm="100%"
-          [style.height]="'100%'"
-        >
-          <mat-card-header>
-            <mat-card-title>What is a COVID-19?</mat-card-title>
-          </mat-card-header>
-          <img mat-card-image src="assets/images/what_is_corona.jpg" alt="Photo of a coronavirus" class="cardImage">
-          <mat-card-content>
-            <p>
-              In 2019, the Centers for Disease Control and Prevention (CDC) started monitoring the outbreak of a new coronavirus, SARS-CoV-2, which causes COVID-19. Authorities first identified the virus in Wuhan, China.Since then, the virus has spread to nearly every country.
-            </p>
-            <p>
-              The first people with COVID-19 had links to an animal and seafood market. This suggests that animals initially transmitted the virus to humans. Then, people with no connections to the market developed the disease, confirming that humans can pass the virus to each other.
-            </p>
-          </mat-card-content>
-        </mat-card>
+      <!-- card 2 -->
+      <mat-card
+        class="example-card margin-top"
+        fxFlex="0 1 calc(33.3% - 32px)"
+        fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="100%"
+        [style.height]="'100%'"
+      >
+        <mat-card-header>
+          <mat-card-title>What is a COVID-19?</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="assets/images/what_is_corona.jpg"
+          alt="Photo of a coronavirus"
+          class="cardImage"
+        />
+        <mat-card-content>
+          <p>
+            In 2019, the Centers for Disease Control and Prevention (CDC)
+            started monitoring the outbreak of a new coronavirus, SARS-CoV-2,
+            which causes COVID-19. Authorities first identified the virus in
+            Wuhan, China.Since then, the virus has spread to nearly every
+            country.
+          </p>
+          <p>
+            The first people with COVID-19 had links to an animal and seafood
+            market. This suggests that animals initially transmitted the virus
+            to humans. Then, people with no connections to the market developed
+            the disease, confirming that humans can pass the virus to each
+            other.
+          </p>
+        </mat-card-content>
+      </mat-card>
 
+      <!-- card 3 -->
+      <mat-card
+        class="example-card margin-top"
+        fxFlex="0 1 calc(33.3% - 32px)"
+        fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="100%"
+        [style.height]="'100%'"
+      >
+        <mat-card-header>
+          <mat-card-title>Symptoms of COVID-19</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="assets/images/symptoms.jpg"
+          alt="Photo of a person wearing mask"
+          class="cardImage"
+        />
+        <mat-card-content>
+          <p>
+            According to the CDC, people may start to experience symptoms 2–14
+            days after exposure to the virus. Symptoms may include:
+          </p>
+          <ul>
+            <li>
+              a fever, chills, a cough
+            </li>
+            <li>
+              shortness of breath or difficulty breathing
+            </li>
+            <li>
+              sore throat
+            </li>
+            <li>
+              congestion or a runny nose
+            </li>
+            <li>
+              fatigue, headache, muscle pain
+            </li>
+            <li>
+              new loss of taste or smell nausea or vomiting, diarrhea,
+            </li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
 
-        <!-- card 3 -->
-        <mat-card
-          class="example-card margin-top"
-          fxFlex="0 1 calc(33.3% - 32px)"
-          fxFlex.lt-md="0 1 calc(50% - 32px)"
-          fxFlex.lt-sm="100%"
-          [style.height]="'100%'"
-        >
-          <mat-card-header>
-            <mat-card-title>Symptoms of COVID-19</mat-card-title>
-          </mat-card-header>
-          <img mat-card-image src="assets/images/symptoms.jpg" alt="Photo of a person wearing mask" class="cardImage">
-          <mat-card-content>
-            <p>According to the CDC, people may start to experience symptoms 2–14 days after exposure to the virus. Symptoms may include:</p>
-            <ul>
-              <li>
-                a fever,
-                chills,
-                a cough
-              </li>
-              <li>
-                shortness of breath or difficulty breathing
-              </li>
-              <li>
-                sore throat
-              </li>
-              <li>
-                congestion or a runny nose
-              </li>
-              <li>
-                fatigue,
-                headache,
-                muscle pain
-              </li>
-              <li>
-                new loss of taste or smell
-                nausea or vomiting,
-                diarrhea,
-              </li>
-            </ul>
-          </mat-card-content>
-        </mat-card>
+      <!-- card 4 -->
+      <mat-card
+        class="example-card margin-top"
+        fxFlex="0 1 calc(33.3% - 32px)"
+        fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="100%"
+        [style.height]="'100%'"
+      >
+        <mat-card-header>
+          <mat-card-title
+            >General symptoms of coronavirus infections</mat-card-title
+          >
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="assets/images/infection.jpg"
+          alt="Photo of a person caughing"
+          class="cardImage"
+        />
+        <mat-card-content>
+          <p>
+            Cold- or flu-like symptoms usually set in around 2–4 days after the
+            infection develops. Symptoms may include:
+          </p>
+          <ul>
+            <li>
+              a runny nose
+            </li>
+            <li>
+              a headache
+            </li>
+            <li>
+              a fever
+            </li>
+            <li>
+              a cough
+            </li>
+            <li>
+              a sore throat
+            </li>
+            <li>
+              generally feeling unwell
+            </li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
 
-        <!-- card 4 -->
-        <mat-card
-          class="example-card margin-top"
-          fxFlex="0 1 calc(33.3% - 32px)"
-          fxFlex.lt-md="0 1 calc(50% - 32px)"
-          fxFlex.lt-sm="100%"
-          [style.height]="'100%'"
-        >
-          <mat-card-header>
-            <mat-card-title>General symptoms of coronavirus infections</mat-card-title>
-          </mat-card-header>
-          <img mat-card-image src="assets/images/infection.jpg" alt="Photo of a person caughing" class="cardImage">
-          <mat-card-content>
-            <p>Cold- or flu-like symptoms usually set in around 2–4 days after the infection develops. Symptoms may include:</p>
-            <ul>
-              <li>
-                a runny nose
-              </li>
-              <li>
-               a headache
-              </li>
-              <li>
-                a fever
-              </li>
-              <li>
-                a cough
-              </li>
-              <li>
-                a sore throat
-              </li>
-              <li>
-                generally feeling unwell
-              </li>
-            </ul>
-          </mat-card-content>
-        </mat-card>
-
-         <!-- card 5 -->
-         <mat-card
-         class="example-card margin-top"
-         fxFlex="0 1 calc(33.3% - 32px)"
-         fxFlex.lt-md="0 1 calc(50% - 32px)"
-         fxFlex.lt-sm="100%"
-         [style.height]="'100%'"
-       >
-         <mat-card-header>
-           <mat-card-title>Types of CoronaVirus</mat-card-title>
-         </mat-card-header>
-         <img mat-card-image src="assets/images/types.jpg" alt="Photo of a CoronaVirus testing" class="cardImage">
-         <mat-card-content>
-           <p>Different types of coronavirus vary, in terms of the severity of disease that they cause and how far they spread. <br> Rarer strains that cause more severe illnesses include MERS-CoV, which causes the disease MERS, and SARS-CoV, the virus responsible for SARS.</p>
-           <ul>
-             <li>
+      <!-- card 5 -->
+      <mat-card
+        class="example-card margin-top"
+        fxFlex="0 1 calc(33.3% - 32px)"
+        fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="100%"
+        [style.height]="'100%'"
+      >
+        <mat-card-header>
+          <mat-card-title>Types of CoronaVirus</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="assets/images/types.jpg"
+          alt="Photo of a CoronaVirus testing"
+          class="cardImage"
+        />
+        <mat-card-content>
+          <p>
+            Different types of coronavirus vary, in terms of the severity of
+            disease that they cause and how far they spread. <br />
+            Rarer strains that cause more severe illnesses include MERS-CoV,
+            which causes the disease MERS, and SARS-CoV, the virus responsible
+            for SARS.
+          </p>
+          <ul>
+            <li>
               229E (alpha coronavirus)
-             </li>
-             <li>
+            </li>
+            <li>
               NL63 (alpha coronavirus)
-             </li>
-             <li>
+            </li>
+            <li>
               OC43 (beta coronavirus)
-             </li>
-             <li>
+            </li>
+            <li>
               HKU1 (beta coronavirus)
-             </li>
-           </ul>
-         </mat-card-content>
-       </mat-card>
+            </li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
 
-         <!-- card 6 -->
-         <mat-card
-         class="example-card margin-top"
-         fxFlex="0 1 calc(33.3% - 32px)"
-         fxFlex.lt-md="0 1 calc(50% - 32px)"
-         fxFlex.lt-sm="100%"
-         [style.height]="'100%'"
-       >
-         <mat-card-header>
-           <mat-card-title>Transmission</mat-card-title>
-         </mat-card-header>
-         <img mat-card-image src="assets/images/transmission.jpg" alt="Photo of a Transmission among people" class="cardImage">
-         <mat-card-content>
-           <p>Researchers believe that the viruses transmit via fluids in the respiratory system, such as mucus. For example, a coronavirus can spread when a person:</p>
-           <ul>
-             <li>
-              coughs or sneezes without covering their mouth, dispersing droplets into the air
-             </li>
-             <li>
+      <!-- card 6 -->
+      <mat-card
+        class="example-card margin-top"
+        fxFlex="0 1 calc(33.3% - 32px)"
+        fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="100%"
+        [style.height]="'100%'"
+      >
+        <mat-card-header>
+          <mat-card-title>Transmission</mat-card-title>
+        </mat-card-header>
+        <img
+          mat-card-image
+          src="assets/images/transmission.jpg"
+          alt="Photo of a Transmission among people"
+          class="cardImage"
+        />
+        <mat-card-content>
+          <p>
+            Researchers believe that the viruses transmit via fluids in the
+            respiratory system, such as mucus. For example, a coronavirus can
+            spread when a person:
+          </p>
+          <ul>
+            <li>
+              coughs or sneezes without covering their mouth, dispersing
+              droplets into the air
+            </li>
+            <li>
               touches someone who has the infection
-             </li>
-             <li>
-              touches a surface that has the virus, then touches their own nose, eyes, or mouth
-             </li>
-           </ul>
-         </mat-card-content>
-       </mat-card>
-      
+            </li>
+            <li>
+              touches a surface that has the virus, then touches their own nose,
+              eyes, or mouth
+            </li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

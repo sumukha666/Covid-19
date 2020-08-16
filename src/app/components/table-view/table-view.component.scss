@@ -97,3 +97,26 @@ table {
 .menuBtn {
   max-height: 2rem;
 }
+
+@media (max-width: 768px) {
+  .mobileView{
+    font-size: 9px;
+  }
+  .deltaValue{
+    color: red;
+    display: flex;
+    font-size: 7px;
+    padding: 0em;
+    margin: 0em;
+  }
+  .tableBtn{
+    font-size: 10px;
+    width: fit-content;
+    height: 2rem;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .icon-display {
+    transform: scale(0.7);
+ }
+}
