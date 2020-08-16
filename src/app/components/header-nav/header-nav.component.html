@@ -15,6 +15,15 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary" class="display-flex">
+      <button
+        type="button"
+        aria-label="toolbar back button"
+        mat-icon-button
+        *ngIf="displayBackButton"
+        (click)= "onClickBackButton()"
+      >
+      <mat-icon>arrow_back_ios</mat-icon>
+      </button>
       <span>Covid-app</span>
       <button
         type="button"
