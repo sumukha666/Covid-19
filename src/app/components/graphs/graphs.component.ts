@@ -34,8 +34,14 @@ export class GraphsComponent implements OnInit {
       trigger: "selection",
     },
   };
-  width = (window.innerWidth >1279) ? window.innerWidth *0.30 :window.innerWidth*0.8;
-  height = (window.innerWidth >1279) ? window.innerHeight *0.4 :window.innerHeight*0.35;
+  width =
+    window.innerWidth > 1279
+      ? window.innerWidth * 0.3
+      : window.innerWidth * 0.8;
+  height =
+    window.innerWidth > 1279
+      ? window.innerHeight * 0.4
+      : window.innerHeight * 0.35;
 
   stateTitle = "COVID-19 information in";
   stateType = "BarChart";
@@ -130,17 +136,10 @@ export class GraphsComponent implements OnInit {
     );
   }
 
-  onClickConfimButton(event) {
-    this.data = this.confirmData;
-    this.title = "Number of COVID-19 Confirmed cases";
-  }
-  onClickRecoveredButton(event) {
-    this.data = this.recoveredData;
-    this.title = "Number of COVID-19 Recovered cases";
-  }
-  onClickDeceasedButton(event) {
-    this.data = this.deceasedData;
-    this.title = "Number of COVID-19 Deceased cases";
+  onOptionSelect(event) {
+    let words = event.split(" ");
+    this.data = this[words[0]];
+    this.title = `Number of COVID-19 ${words[1]} ${words[2]}`;
   }
   last15Days(event) {
     this.data = this.data.slice(this.data.length - 15, this.data.length);
