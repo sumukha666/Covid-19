@@ -17,8 +17,8 @@ export class StateGraphComponent implements OnInit {
     private router: ActivatedRoute
   ) {}
 
-  width = 350;
-  height = 200;
+  width = (window.innerWidth >1279) ? window.innerWidth *0.30 :window.innerWidth*0.8;
+  height = (window.innerWidth >1279) ? window.innerHeight *0.4 :window.innerHeight*0.35;
 
   districtTitle = "COVID-19 information in";
   districtType = "BarChart";

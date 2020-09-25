@@ -97,7 +97,9 @@ table {
 .menuBtn {
   max-height: 2rem;
 }
-
+.mobileView {
+  font-size: 15px;
+}
 @media (max-width: 768px) {
   .mobileView{
     font-size: 9px;

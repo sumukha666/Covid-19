@@ -95,34 +95,30 @@
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>Covid-19 Cases in India</mat-card-title>
-      <mat-card-subtitle>
-        <mat-card-actions>
-          <form class="example-form">
-            <mat-form-field class="example-full-width padding-sides-1rem">
-              <input
-                type="text"
-                placeholder="Select State"
-                aria-label="Number"
-                matInput
-                [formControl]="myControl"
-                [matAutocomplete]="auto"
-              />
-              <mat-autocomplete
-                #auto="matAutocomplete"
-                (optionSelected)="onStateChange($event)"
-              >
-                <mat-option
-                  *ngFor="let option of filteredOptions | async"
-                  [value]="option"
-                >
-                  {{ option }}
-                </mat-option>
-              </mat-autocomplete>
-            </mat-form-field>
-          </form>
-        </mat-card-actions>
-      </mat-card-subtitle>
     </mat-card-header>
+    <form class="example-form">
+      <mat-form-field class="example-full-width padding-sides-1rem">
+        <input
+          type="text"
+          placeholder="Select State"
+          aria-label="Number"
+          matInput
+          [formControl]="myControl"
+          [matAutocomplete]="auto"
+        />
+        <mat-autocomplete
+          #auto="matAutocomplete"
+          (optionSelected)="onStateChange($event)"
+        >
+          <mat-option
+            *ngFor="let option of filteredOptions | async"
+            [value]="option"
+          >
+            {{ option }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
     <div *ngIf="stateData.length === 0; else showStateGraph" class="textCenter">
       <mat-spinner></mat-spinner>
     </div>

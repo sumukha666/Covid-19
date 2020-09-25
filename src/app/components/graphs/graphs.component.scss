@@ -1,10 +1,10 @@
 .graphId1 {
-  overflow: scroll;
+  //overflow: scroll;
   widows: 100%;
   padding-top: 3rem;
 }
 .graphId2 {
-  overflow: scroll;
+  //overflow: scroll;
   widows: 100%;
   //padding-top: 1rem;
 }
@@ -33,9 +33,11 @@
 }
 .padding-sides-1rem {
   padding-left: 1rem;
-  padding-right: 1rem;
+  margin-right: 1rem;
 }
-
+.margin-top-10px {
+  margin-top: 14px;
+}
 // .graph{
 //   // overflow: scroll;
 
@@ -49,7 +51,9 @@
   .margin-top-10px {
       margin-top: 10px;
     }
-  
+    .example-full-width {
+      width: 90%;
+    }
 }
 .btn {
   //width: 100%;
@@ -72,3 +76,4 @@ mat-spinner {
   color: red;
   font-size: 12px;
 }
+
