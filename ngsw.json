@@ -1,6 +1,6 @@
 {
-  "configVersion": 1.1,
-  "timestamp": 1616829177256,
+  "configVersion": "1.1.1",
+  "timestamp": 1616842049960,
   "index": "https://sumukha666.github.io/Covid-19/index.html",
   "assetGroups": [
     {
@@ -13,8 +13,8 @@
       "urls": [
         "https://sumukha666.github.io/Covid-19/favicon.ico",
         "https://sumukha666.github.io/Covid-19/index.html",
-        "https://sumukha666.github.io/Covid-19/main-es2015.2997a01e140a040d2943.js",
-        "https://sumukha666.github.io/Covid-19/main-es5.2997a01e140a040d2943.js",
+        "https://sumukha666.github.io/Covid-19/main-es2015.fd5cfc157c1f1f4e2289.js",
+        "https://sumukha666.github.io/Covid-19/main-es5.fd5cfc157c1f1f4e2289.js",
         "https://sumukha666.github.io/Covid-19/manifest.webmanifest",
         "https://sumukha666.github.io/Covid-19/polyfills-es2015.95bb65e853d2781ac3bd.js",
         "https://sumukha666.github.io/Covid-19/polyfills-es5.341d48ffc88eaeae911d.js",
@@ -67,10 +67,10 @@
     "https://sumukha666.github.io/Covid-19/assets/images/types.jpg": "d28cf35ac7a66e695462b76273b353eefbde2256",
     "https://sumukha666.github.io/Covid-19/assets/images/what_is_corona.jpg": "c81e96f3b2ca98fdd034d446d2f25045a92486be",
     "https://sumukha666.github.io/Covid-19/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://sumukha666.github.io/Covid-19/index.html": "e90c1e1fbf3bbee48c760aea74d9f243b0e2bfd8",
-    "https://sumukha666.github.io/Covid-19/main-es2015.2997a01e140a040d2943.js": "7f3e79fa74774bcdf37a4b60a9899ed23a06331a",
-    "https://sumukha666.github.io/Covid-19/main-es5.2997a01e140a040d2943.js": "492576191904998605cde3f17a13bc1739075ba6",
-    "https://sumukha666.github.io/Covid-19/manifest.webmanifest": "5b27917a387a074bdc0eeddcffd6359e265eba19",
+    "https://sumukha666.github.io/Covid-19/index.html": "d1440a9570c81a95f989cfb6cbdac3f5de171e01",
+    "https://sumukha666.github.io/Covid-19/main-es2015.fd5cfc157c1f1f4e2289.js": "4b51b467d96f63e32f5bc1ab04b4542c816d897d",
+    "https://sumukha666.github.io/Covid-19/main-es5.fd5cfc157c1f1f4e2289.js": "9f41faf7237c6a54fdd47455dffdddc6ec5dcca2",
+    "https://sumukha666.github.io/Covid-19/manifest.webmanifest": "98073a78a29c7bcad3d0797e8833df6dab3d6295",
     "https://sumukha666.github.io/Covid-19/polyfills-es2015.95bb65e853d2781ac3bd.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "https://sumukha666.github.io/Covid-19/polyfills-es5.341d48ffc88eaeae911d.js": "ff14d90e08622190714660721edab5f43578829a",
     "https://sumukha666.github.io/Covid-19/runtime-es2015.409e6590615fb48d139f.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
