@@ -30,6 +30,7 @@ import { StateGraphComponent } from "./components/state-graph/state-graph.compon
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { AboutCovidComponent } from "./components/about-covid/about-covid.component";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatSelectModule } from "@angular/material/select";
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +66,7 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
     ReactiveFormsModule,
     MatTooltipModule,
     MatProgressSpinnerModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
