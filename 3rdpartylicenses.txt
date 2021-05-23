@@ -116,7 +116,10 @@ MIT
 @angular/router
 MIT
 
-@angular/service-worker
+@ngx-translate/core
+MIT
+
+@ngx-translate/http-loader
 MIT
 
 angular-google-charts
