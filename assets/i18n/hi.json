@@ -70,6 +70,10 @@
 		"selectDistrict": "जिले का चयन करें",
 		"selectState": "राज्य चुनें"
 	},
+	"menu": {
+		"aboutCovid": "कोविड-19 के बारे में",
+		"home": "मुख्य पृष्ठ"
+	},
 	"recovered": "बरामद",
 	"state": "राज्य",
 	"stateColumn": {

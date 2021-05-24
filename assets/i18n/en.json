@@ -70,6 +70,10 @@
 		"selectDistrict": "Select District",
 		"selectState": "Select State"
 	},
+	"menu": {
+		"aboutCovid": "About Covid-19",
+		"home": "Home"
+	},
 	"recovered": "Recovered",
 	"state": "State",
 	"stateColumn": {
