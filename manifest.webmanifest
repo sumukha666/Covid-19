@@ -1,8 +1,8 @@
 {
   "name": "Covid-app",
   "short_name": "Covid-app",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "theme_color": "#673AB7",
+  "background_color": "#d9b3ff",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

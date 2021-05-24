@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1621865070749,
+  "timestamp": 1621866242590,
   "index": "https://sumukha666.github.io/Covid-19/index.html",
   "assetGroups": [
     {
@@ -76,7 +76,7 @@
     "https://sumukha666.github.io/Covid-19/index.html": "38630c211f528476f0592df092c3f7b00ce14453",
     "https://sumukha666.github.io/Covid-19/main-es2015.e1f21d99f695df2df03e.js": "e3b45ec71a8bc176005f58134b4ec77061230958",
     "https://sumukha666.github.io/Covid-19/main-es5.e1f21d99f695df2df03e.js": "64679065f6e85cd93be978b5a77d9b9dac74edcb",
-    "https://sumukha666.github.io/Covid-19/manifest.webmanifest": "5b27917a387a074bdc0eeddcffd6359e265eba19",
+    "https://sumukha666.github.io/Covid-19/manifest.webmanifest": "656835f886915af4ff55665fec582e15938d865a",
     "https://sumukha666.github.io/Covid-19/polyfills-es2015.95bb65e853d2781ac3bd.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "https://sumukha666.github.io/Covid-19/polyfills-es5.341d48ffc88eaeae911d.js": "ff14d90e08622190714660721edab5f43578829a",
     "https://sumukha666.github.io/Covid-19/runtime-es2015.409e6590615fb48d139f.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
